@@ -4,8 +4,13 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+		<!--<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>-->
 	</PropertyGroup>
+
+	<!--<ItemGroup>
+	  <Content Remove="wwwroot\service-worker.js" />
+	  <Content Remove="wwwroot\service-worker.published.js" />
+	</ItemGroup>-->
 
 	<ItemGroup>
 		<PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />
@@ -17,9 +22,9 @@
 		<PackageReference Include="protobuf-net.Grpc" Version="1.0.152" />
 	</ItemGroup>
 
-	<ItemGroup>
+	<!--<ItemGroup>
 		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
-	</ItemGroup>
+	</ItemGroup>-->
 
 	<ItemGroup>
 		<BlazorWebAssemblyLazyLoad Include="RuntimePerformance.Contributions.dll" />
