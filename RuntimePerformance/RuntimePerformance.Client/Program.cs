@@ -22,7 +22,7 @@ builder.Services.AddSingleton(services =>
     // Create a channel with a GrpcWebHandler that is addressed to the backend server.
     var httpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler());
 
-    return GrpcChannel.ForAddress(backendUrl, new GrpcChannelOptions { HttpHandler = httpHandler });
+    return GrpcChannel.ForAddress(builder.HostEnvironment.BaseAddress, new GrpcChannelOptions { HttpHandler = httpHandler });
 });
 
 // builder.Services.AddContributionsFeature();

@@ -7,6 +7,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.4" />
 		<PackageReference Include="Grpc.AspNetCore.Web" Version="2.41.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.1" />
 		<PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.152" />
@@ -26,7 +27,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\RuntimePerformance.Client\RuntimePerformance.Client.csproj" />
 	  <ProjectReference Include="..\RuntimePerformance.Shared\RuntimePerformance.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Pages\" />
 	</ItemGroup>
 
 </Project>

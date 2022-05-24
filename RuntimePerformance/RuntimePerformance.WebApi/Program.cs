@@ -6,22 +6,7 @@ using RuntimePerformance.WebApi.Utils;
 using ProtoBuf.Grpc.Server;
 using System.IO.Compression;
 
-var corsPolicy = "CorsPolicy";
-
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(corsPolicy,
-        builder =>
-        {
-            builder
-                .AllowCredentials()
-                .AllowAnyHeader()
-                .WithHeaders(new[] { "GET", "HEAD", "PUT", "POST", "DELETE" })
-                .WithOrigins("https://localhost:7193");
-        });
-});
-
 builder.Services.AddScoped(sp => new HttpClient());
 builder.Services.AddScoped<ContributionsService>();
 builder.Services.AddScoped<ConferencesService>();
@@ -53,8 +38,9 @@ using (var scope = app.Services.CreateScope())
     await DataGenerator.InitializeAsync(services);
 }
 
-app.UseCors(corsPolicy);
 app.UseHttpsRedirection();
+app.UseBlazorFrameworkFiles();
+app.UseStaticFiles();
 app.UseRouting();
 
 app.UseGrpcWeb();
@@ -65,6 +51,7 @@ app.UseEndpoints(endpoints =>
     endpoints.MapGrpcService<ConferencesService>().EnableGrpcWeb();
     endpoints.MapGrpcService<SpeakersService>().EnableGrpcWeb();
     endpoints.MapControllers();
+    endpoints.MapFallbackToFile("index.html");
 });
 
 app.Run();

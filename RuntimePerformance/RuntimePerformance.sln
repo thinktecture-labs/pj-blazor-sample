@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuntimePerformance.WebApi",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuntimePerformance.Shared", "RuntimePerformance.Shared\RuntimePerformance.Shared.csproj", "{E20D5F09-04DA-4D56-A1EE-5C6A5E039D2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntimePerformance.Client", "RuntimePerformance.Client\RuntimePerformance.Client.csproj", "{A7D00D5A-136C-4A17-95F5-117CED6C13D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuntimePerformance.Client", "RuntimePerformance.Client\RuntimePerformance.Client.csproj", "{A7D00D5A-136C-4A17-95F5-117CED6C13D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntimePerformance.Contributions", "RuntimePerformance.Contributions\RuntimePerformance.Contributions.csproj", "{A0FBB933-3FC4-48E8-B7BC-E484D633F72D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuntimePerformance.Contributions", "RuntimePerformance.Contributions\RuntimePerformance.Contributions.csproj", "{A0FBB933-3FC4-48E8-B7BC-E484D633F72D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntimePerformance.Conferences", "RuntimePerformance.Conferences\RuntimePerformance.Conferences.csproj", "{D571D871-EFCF-431F-BF1E-23E525FF8241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuntimePerformance.Conferences", "RuntimePerformance.Conferences\RuntimePerformance.Conferences.csproj", "{D571D871-EFCF-431F-BF1E-23E525FF8241}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
