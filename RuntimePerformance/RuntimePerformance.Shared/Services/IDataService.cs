@@ -1,0 +1,22 @@
+﻿using System.Runtime.Serialization;
+using System.ServiceModel;
+
+namespace RuntimePerformance.Shared.Services
+{
+    [ServiceContract]
+    public interface IDataService<T>
+    {
+        [OperationContract]
+        Task<List<T>> GetCollectionAsync(CollectionRequest request);
+    }
+
+    [DataContract]
+    public class CollectionRequest
+    {
+        [DataMember(Order = 1)]
+        public int Take { get; set; }
+
+        [DataMember(Order = 2)]
+        public string SearchTerm { get; set; } = string.Empty;
+    }
+}

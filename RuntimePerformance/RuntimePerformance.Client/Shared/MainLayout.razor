@@ -1,0 +1,36 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="@_currentTheme" IsDarkMode="@_isInDarkMode"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+        <MudAppBar Elevation="1">   
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" OnClick="ToggleDrawer"></MudIconButton>
+            @if (_navigationManager != null && _navigationManager.Uri.Last() != '/')
+            {
+                <MudIconButton Icon="@Icons.Filled.ArrowBack" OnClick="@(() => _navigationManager?.NavigateTo("/"))" />
+            }
+            <MudHidden Breakpoint="Breakpoint.SmAndDown">
+                <MudText Typo="Typo.h5">TT Blazor Samples</MudText>
+            </MudHidden>
+            <MudHidden Breakpoint="Breakpoint.MdAndUp">
+                <MudText Typo="Typo.h6">TT Blazor Samples</MudText>
+            </MudHidden>
+            <MudSpacer/>
+            <MudIconButton Icon="@_themeIcon" Color="Color.Inherit" Target="_blank" OnClick="@SwitchTheme"/>
+        </MudAppBar>
+        <MudDrawer @bind-Open="_isOpen">
+            <MudNavMenu>
+                <MudNavLink Href="/" Match="NavLinkMatch.All">Dashboard</MudNavLink>
+                <MudNavLink Href="/contributions" Match="NavLinkMatch.All">Contributions</MudNavLink>
+                <MudNavLink Href="/conferences"  Match="NavLinkMatch.All">Conferences</MudNavLink>
+            </MudNavMenu>
+        </MudDrawer>
+        <MudMainContent Class="pt-16">
+            <div class="content-container pa-8">
+                @Body
+            </div>
+        </MudMainContent>
+    </MudLayout>
+
