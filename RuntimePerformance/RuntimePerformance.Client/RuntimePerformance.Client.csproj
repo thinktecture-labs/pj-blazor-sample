@@ -21,10 +21,10 @@
 		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
 	</ItemGroup>
 
-	<ItemGroup>
+	<!--<ItemGroup>
 		<BlazorWebAssemblyLazyLoad Include="RuntimePerformance.Contributions.dll" />
 		<BlazorWebAssemblyLazyLoad Include="RuntimePerformance.Conferences.dll" />
-	</ItemGroup>
+	</ItemGroup>-->
 
 	<ItemGroup>
 	  <ProjectReference Include="..\RuntimePerformance.Conferences\RuntimePerformance.Conferences.csproj" />

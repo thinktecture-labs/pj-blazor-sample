@@ -1,6 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Components.WebAssembly.Services
 @using System.Reflection
-<Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="@lazyLoadedAssemblies" OnNavigateAsync="@OnNavigateAsync">
+@*<Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="@lazyLoadedAssemblies" OnNavigateAsync="@OnNavigateAsync">*@
+    <Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="new[] { typeof(RuntimePerformance.Contributions.Contributions).Assembly,
+                                  typeof(RuntimePerformance.Conferences.Conferences).Assembly }">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
@@ -14,7 +16,7 @@
 </Router>
 
 
-@code {
+@*@code {
     [Inject] private LazyAssemblyLoader _assemblyLoader { get; set; } = default!;
     private List<Assembly> lazyLoadedAssemblies = new();
 
@@ -38,4 +40,4 @@
             Console.WriteLine("Error: {Message}", ex.Message);
         }
     }
-}
+}*@

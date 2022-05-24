@@ -18,7 +18,8 @@ namespace RuntimePerformance.WebApi.Services
             var result = string.IsNullOrWhiteSpace(request.SearchTerm)
                 ? _context.Conferences
                 : _context.Conferences.Where(c => c.Title.Contains(request.SearchTerm));
-            return result.Take(request.Take).ToListAsync();
+            var take = request.Take > 1000 ? 1000 : request.Take;
+            return result.Take(take).ToListAsync();
         }
     }
 }

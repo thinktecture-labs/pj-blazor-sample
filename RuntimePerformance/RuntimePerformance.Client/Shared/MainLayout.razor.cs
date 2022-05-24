@@ -68,7 +68,6 @@ namespace RuntimePerformance.Client.Shared
                 if (_localStorage is not null)
                 {
                     var applicationTheme = await _localStorage.GetItemAsync<string>(ApplicationThemeKey);
-                    Console.WriteLine($"Current Theme: {applicationTheme}");
                     _isInDarkMode = applicationTheme == "dark";
                     SetTheme();
                 }
